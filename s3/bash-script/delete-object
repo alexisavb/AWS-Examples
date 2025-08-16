@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+echo "This script to delete object."
+
+# Check for bucket name argument
+if [ -z "$1" ]; then
+    echo "There needs to be a bucket name eg.. my-bucket-name."
+    exit 1
+fi
+
+BUCKET_NAME=$1
+
+KEYS=$(aws s3api list-objects --bucket $BUCKET_NAME --query "Contents[].Key" --output text)
+
+# Iterate over each key and delete the corresponding object
+for key in $KEYS; do
+    echo "Delete: $key"
+    aws s3api delete-object --bucket $BUCKET_NAME --key "$key"
+done

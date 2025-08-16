@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "This script to list S3 buckets."
+
+aws s3api list-buckets 
+#| jr -r '.Buckets | sort_by(.CreationDate) | reverse | .[0.5] | .[] | .Name'
