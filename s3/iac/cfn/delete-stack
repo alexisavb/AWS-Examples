@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo "Delete stack for s3 bucket via CFN."
+
+STACK_NAME="cfn-s3-bucket-simple-01"
+#https://docs.aws.amazon.com/cli/latest/reference/cloudformation/delete-stack.html
+aws cloudformation delete-stack \
+--stack-name $STACK_NAME \
+--region us-east-1 
