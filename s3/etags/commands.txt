@@ -1,0 +1,5 @@
+aws s3 cp s3://ao-example-etag-01/etag-example.txt - && cat -
+ - It downloads the object from S3 and writes its content to stdout.
+
+First ETag: 0c88e04ef6b740ef12be349a9e075278
+Second ETag: 1aa99f6a8ae6817fd94db2658c921e43
