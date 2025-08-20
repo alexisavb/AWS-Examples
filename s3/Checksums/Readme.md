@@ -27,6 +27,6 @@ aws s3api put-object \
 --bucket ao-checksums-01 \
 --body checksumsFile.txt \
 --key checksumsFile.txt \
---checksum-algorithm CRC32 \
+--checksum-algorithm CRC32
 ```
 # 187843715 20 checksumsFile.txt
